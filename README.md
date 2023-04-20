@@ -5,6 +5,9 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ## Available Scripts
 
 In the project directory, you can run:
+- [Original Template](https://github.com/nashville-software-school/react-18-kennels-template)
+- `npm install`
+- `npm install —save react react-do next`
 
 ### `npm start`
 

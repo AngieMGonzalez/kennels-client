@@ -3,7 +3,7 @@ import { getAnimals } from "../../managers/animals";
 import { getCustomers } from "../../managers/customers";
 import { Customer } from "./Customer";
 import "./Customers.css"
-
+// changed CamelCase to snake_case
 export const CustomerList = () => {
   const [animals, setAnimals] = useState([])
   const [customers, setCustomers] = useState([])
