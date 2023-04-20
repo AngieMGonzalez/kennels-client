@@ -2,7 +2,7 @@ import { useState, useEffect } from "react"
 import { addAnimal, updateAnimal, getAnimalById } from "../../managers/animals"
 import { getLocations } from "../../managers/locations"
 import { useParams, useNavigate } from 'react-router-dom'
-
+// changed CamelCase to snake_case
 export const AnimalForm = () => {
   const [locations, setLocations] = useState([])
   const { animalId } = useParams()
@@ -28,9 +28,9 @@ export const AnimalForm = () => {
   }, [animalId])
 
   const constructNewAnimal = () => {
-    const locationId = parseInt(animal.location_id)
+    const location_id = parseInt(animal.location_id)
 
-    if (locationId === 0) {
+    if (location_id === 0) {
       window.alert("Please select a location")
     } else {
       if (animalId) {
@@ -39,9 +39,9 @@ export const AnimalForm = () => {
           id: animal.id,
           name: animal.name,
           breed: animal.breed,
-          locationId: locationId,
+          location_id: location_id,
           status: animal.status,
-          customerId: parseInt(localStorage.getItem("kennels_customer"))
+          customer_id: parseInt(localStorage.getItem("kennels_customer"))
         })
           .then(() => navigate("/animals"))
       } else {
@@ -49,9 +49,9 @@ export const AnimalForm = () => {
         addAnimal({
           name: animal.name,
           breed: animal.breed,
-          locationId: locationId,
+          location_id: location_id,
           status: animal.status,
-          customerId: parseInt(localStorage.getItem("kennels_customer"))
+          customer_id: parseInt(localStorage.getItem("kennels_customer"))
         })
           .then(() => navigate("/animals"))
       }
@@ -83,8 +83,8 @@ export const AnimalForm = () => {
       </fieldset>
       <fieldset>
         <div className="form-group">
-          <label htmlFor="locationId">Location: </label>
-          <select name="locationId" className="form-control"
+          <label htmlFor="location_id">Location: </label>
+          <select name="location_id" className="form-control"
             value={animal.location_id}
             onChange={handleControlledInputChange}>
 

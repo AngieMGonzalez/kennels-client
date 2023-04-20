@@ -9,6 +9,18 @@ export const AnimalDetails = () => {
   const { animalId } = useParams()
   const navigate = useNavigate()
 
+  // Joining Data for Python Kennel https://github.com/nashville-software-school/bangazon-llc/blob/cohort-62/book-2-database/chapters/PK_SQL_JOINS.md
+  // const animals = useAnimals()
+  // const locations = useLocations()
+
+  // const findLocation = (locationId) => {
+  //   return locations.find(location => location.id === locationId)
+  //   }
+
+  // const animalsWithEmbeddedLocation = animals.map(animal => {
+  //   animal.location = findLocation(animal.locationId)
+  // })
+
   useEffect(() => {
     getAnimalById(animalId)
       .then(setAnimal)
